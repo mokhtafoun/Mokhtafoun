@@ -1,0 +1,36 @@
+{
+  "hosting": {
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/api/summarize",
+        "function": "summarizeFeedback"
+      },
+      {
+        "source": "/api/translate",
+        "function": "translateText"
+      },
+      {
+        "source": "/api/moderate",
+        "function": "moderateText"
+      },
+      {
+        "source": "/api/ogimport",
+        "function": "ogImport"
+      },
+      {
+        "source": "/api/transcribe",
+        "function": "transcribeAudio"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
